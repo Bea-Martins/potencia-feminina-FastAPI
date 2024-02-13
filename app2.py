@@ -28,6 +28,14 @@ async def get_user(id: UUID):
 
 @app.post("/api/users")
 async def add_user(user: User):
+  """
+  Adiciona um usuário na base de dados:
+  - **id**: UUID
+  - **first_name**: string
+  - **last_name**: string
+  - **email**: string
+  - **role**: Role
+  """
   db.append(user)
   return {"id": user.id}
 
